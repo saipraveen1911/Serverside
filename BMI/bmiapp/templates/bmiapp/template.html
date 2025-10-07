@@ -1,0 +1,23 @@
+template.html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BMI Calculator</title>
+</head>
+<body bgcolor="lightblue">
+    <center style="font-size: 24px;">
+        <h1 style="color:rgb(255,0,0)">BMI Calculator</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <label style="color:rgb(0, 116, 0)">Height (m):</label><br>
+            <input type="text" name="height"><br><br>
+            <label style="color:rgb(0,0,255)">Weight (kg):</label><br>
+            <input type="text" name="weight"><br><br>
+            <button type="submit">Calculate</button>
+        </form>
+        {% if BMI %}
+            <h3>Your BMI is: {{ BMI }}</h3>
+        {% endif %}
+    </center>
+</body>
+</html>
